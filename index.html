@@ -73,17 +73,29 @@
 </section>
 <section id="projects" class="wrap">
   <h2>Projects</h2>
+
   <article class="card feature">
     <div class="row"><h3>AWS Infrastructure Migration &amp; Kubernetes Lab</h3><span class="date">Nov 2026 – Present</span></div>
-    <p class="role"><a href="https://github.com/jineshptl/aws-infrastructure-migration">View on GitHub ›</a></p>
-    <ul>
-      <li>Migrated a 2-server Linux lab to AWS with Terraform (VPC, EC2, security groups limited to one admin IP) and Ansible tag-based dynamic inventory. Docker, Nginx, Prometheus, Grafana and Node Exporter with an InstanceDown alert; rebuilds from code in about 10 minutes.</li>
-      <li>Built a 2-node Kubernetes v1.35 cluster on ARM EC2 with kubeadm and containerd, with init and join fully automated through Ansible over AWS SSM. No SSH port open, no stored access keys.</li>
-      <li>Replaced Flannel with Cilium in eBPF kube-proxy replacement mode; Service iptables rules dropped from 19 to 0.</li>
-      <li>Exposed LoadBalancer Services by peering Cilium with an FRR router over BGP; traffic kept flowing when one node stopped advertising.</li>
-      <li>Ran 6 failure drills (BGP router down, port 179 blocked, ASN mismatch, IP pool deleted, app scaled to 0, etcd restore) with a runbook for each.</li>
-      <li>GitHub Actions CI (terraform fmt/validate, ansible-lint, shellcheck, gitleaks) with branch protection, plus a Bash script that checks every AWS region for leftover billable resources.</li>
-    </ul>
+    <p class="summary">A two-server Linux lab rebuilt on AWS entirely as code, then extended into a Kubernetes cluster with BGP load balancing and tested with failure drills.</p>
+    <div class="chips">
+      <span>AWS</span><span>Terraform</span><span>Ansible</span><span>Kubernetes</span><span>Cilium</span><span>BGP</span><span>Prometheus</span><span>GitHub Actions</span>
+    </div>
+    <div class="highlights">
+      <div class="hl"><span class="big">10 min</span><h4>Rebuild from code</h4><p>Terraform builds the VPC, EC2 and security groups. Ansible installs Docker, Nginx, Prometheus and Grafana.</p></div>
+      <div class="hl"><span class="big">0</span><h4>Open SSH ports</h4><p>A 2-node Kubernetes v1.35 cluster set up by Ansible over AWS SSM, with no stored access keys.</p></div>
+      <div class="hl"><span class="big">19 → 0</span><h4>iptables rules</h4><p>Swapped Flannel for Cilium in eBPF mode, which removed kube-proxy completely.</p></div>
+      <div class="hl"><span class="big">2 nodes</span><h4>BGP load balancing</h4><p>Cilium peers with an FRR router. Traffic kept flowing when one node stopped advertising.</p></div>
+      <div class="hl"><span class="big">6</span><h4>Failure drills</h4><p>Router down, blocked port, ASN mismatch, deleted IP pool, app scaled to 0 and an etcd restore, each with a runbook.</p></div>
+      <div class="hl"><span class="big">5</span><h4>Required CI checks</h4><p>Terraform, Ansible, shell and secret scans must pass before anything reaches main.</p></div>
+    </div>
+    <p class="more"><a href="https://github.com/jineshptl/aws-infrastructure-migration">View on GitHub ›</a></p>
+  </article>
+
+  <article class="card">
+    <div class="row"><h3>Linux Infrastructure Automation Lab</h3><span class="date">On-prem · v1</span></div>
+    <p class="summary">The original lab: Ubuntu servers on a laptop, configured and hardened with Ansible and monitored with Prometheus and Grafana.</p>
+    <div class="chips"><span>Linux</span><span>Ansible</span><span>Nginx</span><span>Prometheus</span><span>Grafana</span></div>
+    <p class="more"><a href="https://github.com/jineshptl/linux-infrastructure-automation-lab">View on GitHub ›</a></p>
   </article>
 </section>
 <section id="skills" class="wrap">

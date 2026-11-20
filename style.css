@@ -92,3 +92,16 @@ footer { text-align: center; padding: 30px 22px 60px; border-top: 1px solid var(
   .card, .tile, .stats div { background: #fff; }
   .hero { padding-top: 0; }
 }
+
+/* Projects v2 */
+.summary { font-size: 19px; color: var(--muted); max-width: 720px; margin: 10px 0 18px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+.chips span { font-size: 13px; padding: 5px 12px; border-radius: 980px; background: var(--bg); color: var(--text); border: 1px solid var(--line); }
+.highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.hl { background: var(--bg); border-radius: 14px; padding: 20px; }
+.hl .big { display: block; font-size: 30px; font-weight: 700; letter-spacing: -0.02em; color: var(--accent); white-space: nowrap; }
+.hl h4 { margin: 4px 0 6px; }
+.hl p { font-size: 14px; color: var(--muted); }
+.more { margin-top: 22px; font-size: 17px; }
+@media (max-width: 860px) { .highlights { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .highlights { grid-template-columns: 1fr; } .summary { font-size: 17px; } }
